@@ -1,3 +1,16 @@
+<?php
+// resources/views/livewire/layout/navigation.blade.php
+
+use App\Livewire\Actions\Logout;
+use Livewire\Volt\Component;
+
+new class extends Component {
+    /**
+     * Log the current user out of the application.
+     */
+}; ?>
+
+
 <div>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,17 +23,20 @@
             <div class="flex h-16 items-center justify-between">
                 <!-- Left side: Logo -->
                 <div class="flex-shrink-0">
-                    <x-app-logo />
+                    <a href="{{ route('home') }}" wire:navigate>
+                        <x-app-logo />
+                    </a>
                 </div>
 
                 <!-- Center: Desktop Navigation Menu -->
                 <div class="hidden space-x-8 md:flex">
-                    <a href="#about"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-[#416910]">
+                    <a href="{{ route('about') }}" wire:navigate :active="request()->routeIs('about')"
+                        class="{{ request()->routeIs('about') ? 'text-[#416910] border-b-2 border-[#416910]' : 'text-gray-700' }} px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-[#416910]">
                         About & Experience
                     </a>
-                    <a href="#programs"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-[#416910]">
+                    <a href="{{ route('programs-and-products') }}" wire:navigate
+                        :active="request()->routeIs('programs-and-products')"
+                        class="{{ request()->routeIs('programs-and-products') ? 'text-[#416910]' : 'text-gray-700' }} px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-[#416910]">
                         Program & Products
                     </a>
                     <a href="#promo"

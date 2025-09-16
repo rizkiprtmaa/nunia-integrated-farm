@@ -89,6 +89,49 @@ document.addEventListener("DOMContentLoaded", () => {
             swiper: eventsThumbs,
         },
     });
+
+    // About Gallery Mobile Swiper Initialization
+    const aboutGallerySwiper = new Swiper(".about-gallery-swiper", {
+        modules: [Pagination, Autoplay],
+        loop: true,
+        spaceBetween: 16,
+        slidesPerView: 1,
+        speed: 800,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".about-gallery-swiper .swiper-pagination",
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet",
+            bulletActiveClass: "swiper-pagination-bullet-active",
+            renderBullet: function (index, className) {
+                return (
+                    '<span class="' +
+                    className +
+                    ' w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-colors duration-300"></span>'
+                );
+            },
+        },
+    });
+
+    // Custom pagination styling for About Gallery
+    const aboutPaginationBullets = document.querySelectorAll(
+        ".about-gallery-swiper .swiper-pagination-bullet"
+    );
+    aboutPaginationBullets.forEach((bullet) => {
+        bullet.addEventListener("click", function () {
+            // Remove active class from all bullets
+            aboutPaginationBullets.forEach((b) => {
+                b.classList.remove("bg-[#416910]");
+                b.classList.add("bg-gray-300");
+            });
+            // Add active class to clicked bullet
+            this.classList.remove("bg-gray-300");
+            this.classList.add("bg-[#416910]");
+        });
+    });
 });
 
 // Fix default icon path issue (important for Laravel + Vite)
@@ -115,4 +158,55 @@ document.addEventListener("DOMContentLoaded", () => {
         .addTo(map)
         .bindPopup("<b>Nunia Integrated Farm</b><br>Ciamis, Jawa Barat.")
         .openPopup();
+
+    // Testimoni Swiper Initialization
+    const testimoniSwiper = new Swiper(".testimoni-swiper", {
+        modules: [Navigation, Pagination, Autoplay],
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        speed: 800,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            },
+        },
+        on: {
+            slideChange: function () {
+                // Update custom pagination
+                const currentSlide = document.querySelector(
+                    ".swiper-pagination-current"
+                );
+                if (currentSlide) {
+                    currentSlide.textContent = this.realIndex + 1;
+                }
+            },
+            init: function () {
+                // Initialize custom pagination
+                const currentSlide = document.querySelector(
+                    ".swiper-pagination-current"
+                );
+                if (currentSlide) {
+                    currentSlide.textContent = this.realIndex + 1;
+                }
+            },
+        },
+    });
 });

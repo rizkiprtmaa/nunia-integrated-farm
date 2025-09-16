@@ -25,7 +25,7 @@
     </button>
 
     <!-- Popup -->
-    <div x-show="open" x-transition
+    <div x-show="open" x-transition x-cloak
         class="absolute bottom-20 right-0 w-72 rounded-xl border border-gray-200 bg-white shadow-lg">
         <div class="p-4">
             <h3 class="mb-2 font-bold text-gray-800">Mulai Obrolan</h3>
