@@ -1,7 +1,7 @@
 <div x-data="{ open: false }" class="fixed bottom-6 right-6 z-50">
     <!-- Floating Button -->
     <button @click="open = !open"
-        class="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110">
+        class="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110">
         <svg viewBox="0 0 48 48" class="h-7 w-7" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
             fill="#ffffff" stroke="#ffffff">
             <g id="SVGRepo_bgCarrier" stroke-width="1"></g>

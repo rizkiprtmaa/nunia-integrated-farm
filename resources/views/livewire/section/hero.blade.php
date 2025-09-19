@@ -3,7 +3,10 @@
 use Livewire\Volt\Component;
 
 new class extends Component {
-    //
+    public function render(): mixed
+    {
+        return view('livewire.section.hero');
+    }
 }; ?>
 
 <div>

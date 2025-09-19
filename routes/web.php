@@ -3,13 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::view('/', 'pages.welcome')->name('home');
 
-Route::view('about', 'about')->name('about');
+Route::view('about', 'pages.about')->name('about');
 
-Route::view('programs-and-products', 'programs-products')->name('programs-and-products');
+Route::view('programs-and-products', 'pages.programs-products')->name('programs-and-products');
+
+Route::view('articles', 'pages.articles')->name('articles');
+Route::view('galery-and-testimoni', 'pages.galery-testimoni')->name('galery-and-testimoni');
+
+Route::view('promo-nunia', 'pages.promotion')->name('promotion');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

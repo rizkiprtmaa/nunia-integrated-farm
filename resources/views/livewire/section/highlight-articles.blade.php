@@ -38,6 +38,11 @@ new class extends Component {
             'slug' => 'natural-pest-control',
         ],
     ];
+
+    public function render(): mixed
+    {
+        return view('livewire.section.highlight-articles');
+    }
 }; ?>
 
 <div>

@@ -41,6 +41,11 @@ new class extends Component {
             'text' => 'Kualitas sayuran organik dari Nunia Farm luar biasa segar dan natural. Rasa autentiknya sangat mendukung kreasi kuliner premium kami. Konsistensi kualitas dan pengiriman selalu tepat waktu.',
         ],
     ];
+
+    public function render(): mixed
+    {
+        return view('livewire.section.testimoni');
+    }
 }; ?>
 
 <section class="bg-white py-12 sm:py-16 lg:py-20">

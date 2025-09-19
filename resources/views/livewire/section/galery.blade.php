@@ -47,6 +47,11 @@ new class extends Component {
             'size' => 'medium',
         ],
     ];
+
+    public function render(): mixed
+    {
+        return view('livewire.section.galery');
+    }
 }; ?>
 
 <section class="bg-white py-12 sm:py-16 lg:py-20">

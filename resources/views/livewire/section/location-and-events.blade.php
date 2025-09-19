@@ -33,6 +33,11 @@ new class extends Component {
             'thumbnail' => 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=150&h=150&fit=crop',
         ],
     ];
+
+    public function render(): mixed
+    {
+        return view('livewire.section.location-and-events');
+    }
 }; ?>
 
 <div>

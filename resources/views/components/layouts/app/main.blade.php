@@ -9,6 +9,9 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +25,9 @@
     @livewireStyles
 </head>
 
-<body class="min-h-screen bg-white">
+<body class="min-h-screen bg-white pt-20">
     {{-- WhatsApp Button Component --}}
-    <x-layouts.navigation />
+    <livewire:layout.navigation />
     <x-whatsapp-button />
 
     {{ $slot }}
@@ -37,6 +40,7 @@
 
     <!-- Livewire Scripts -->
     @livewireScripts
+    @fluxScripts
 </body>
 
 </html>

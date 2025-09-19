@@ -209,4 +209,63 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         },
     });
+
+    // Gallery Testimonials Swiper - Top Row (Left to Right)
+    if (document.querySelector('.testimoni-swiper-top')) {
+        const testimoniSwiperTop = new Swiper(".testimoni-swiper-top", {
+            modules: [Autoplay],
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            spaceBetween: 24,
+            slidesPerView: 1,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    }
+
+    // Gallery Testimonials Swiper - Bottom Row (Right to Left)
+    if (document.querySelector('.testimoni-swiper-bottom')) {
+        const testimoniSwiperBottom = new Swiper(".testimoni-swiper-bottom", {
+            modules: [Autoplay],
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                reverseDirection: true,
+            },
+            speed: 1000,
+            spaceBetween: 24,
+            slidesPerView: 1,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    }
 });
